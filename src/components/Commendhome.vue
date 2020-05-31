@@ -88,7 +88,7 @@
                     <el-row :gutter="20">
                         <el-col :span="6"><div class="grid-content bg-purple">
                             <div class="let">
-                                <div>7一下几种猪肉部位您会选择哪种购买</div>
+                                <div>7以下几种猪肉部位您会选择哪种购买</div>
                                 <el-radio-group v-model="radio7">
                                     <p><el-radio label="A">腿部肉</el-radio></p>
                                     <p><el-radio label="B">五花肉</el-radio></p>
@@ -158,6 +158,10 @@
         },
         methods:{
             pushParms(){
+                if(this.radio1==""||this.radio2==""||this.radio3==""||this.radio4==""||this.radio5==""||this.radio6==""||this.radio7==""||this.radio8==""||this.radio9==""){
+                    alert("请完整填写问卷")
+                    return
+                }
                 let params = {
                     options: this.radio1+this.radio2+this.radio3+this.radio4+this.radio5+this.radio6+this.radio7+this.radio8+this.radio9
                 }

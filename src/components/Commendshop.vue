@@ -3,7 +3,7 @@
         <!-- 面包屑导航区-->
         <el-breadcrumb separator-class="el-icon-arrow-right">
             <el-breadcrumb-item >首页</el-breadcrumb-item>
-            <el-breadcrumb-item >推荐结果</el-breadcrumb-item>
+            <el-breadcrumb-item >选购猪肉</el-breadcrumb-item>
         </el-breadcrumb>
 
         <!-- 卡片视图-->

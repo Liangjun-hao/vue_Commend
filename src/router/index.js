@@ -6,7 +6,6 @@ import Home from "../components/Home";
 import Welcome from "../components/Welcome";
 import Commendshop from "../components/Commendshop";
 import Commendindex from "../components/Commendindex";
-import search from "../components/search";
 Vue.use(VueRouter)
 
   const routes = [
@@ -14,12 +13,7 @@ Vue.use(VueRouter)
       path: '/',
       redirect: Home
     },
-    {
-      path: '/search',
-      name: 'search',
-      component: search
 
-    },
     {
       path: '/home',
       name: 'Home',
