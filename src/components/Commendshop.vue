@@ -10,6 +10,7 @@
         <el-card>
             <!--选购表格-->
         <el-table
+                v-loading="loading"
                 :data="shopList"
                 border
                 style="width: 100%">
@@ -62,6 +63,7 @@
         name: "Commendshop",
         data(){
             return {
+                loading:true,
                 shopList:[],
             };
         },
@@ -75,6 +77,7 @@
                 this.$axios.get('http://106.14.117.35:5005/api/v1/get_items')
                 .then(function (resp) {
                     that.shopList=resp.data
+                    that.loading=false
                 })
             },
             handleChange(value) {

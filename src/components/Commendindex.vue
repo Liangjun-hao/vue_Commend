@@ -10,6 +10,7 @@
         <el-card>
             <h4>您好，根据您填写问卷的结果，我们推荐您购买以下猪肉</h4>
             <el-table
+                    v-loading="loading"
                     :data="shopList"
                     border
                     style="width: 100%">
@@ -54,16 +55,23 @@
         name: "Commendindex",
         data(){
             return{
+                loading:true,
                 shopList:[],
             }
         },
         created() {
             const that=this
             let aaId=this.$route.params.options
-            axios.post('http://106.14.117.35:5005/api/v1/get_option',{options:aaId})
-                .then(function (resp) {
-                    that.shopList=resp.data
-                })
+            if (aaId==null){
+                alert("请先填写问卷！")
+                this.$router.push("/commendhome")
+            }else{
+                axios.post('http://106.14.117.35:5005/api/v1/get_option',{options:aaId})
+                    .then(function (resp) {
+                        that.shopList=resp.data
+                        that.loading=false
+                    })
+            }
 
         },
         methods:{
